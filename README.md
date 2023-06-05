@@ -1,3 +1,4 @@
+[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=11290658)
 # CS 362 Final Project
 
 This repository contains the application you will work with for the CS 362 final project.  The application code itself is written in the `src/` directory, but it is factored in such a way that the application cannot be run directly from the `src/` directory.  Instead, the app must be built before it can be run.
