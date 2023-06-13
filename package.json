@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "CS 362 Final Project",
   "scripts": {
+    "cy:open": "cypress open",
     "build": "webpack",
     "start": "webpack serve --open"
   },
   "devDependencies": {
     "css-loader": "^6.7.4",
+    "cypress": "^12.14.0",
     "html-webpack-plugin": "^5.5.1",
     "style-loader": "^3.3.3",
     "webpack": "^5.83.1",
