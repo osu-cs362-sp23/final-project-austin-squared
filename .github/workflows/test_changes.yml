@@ -1,10 +1,11 @@
 name: Test Changes
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_call:
+    inputs:
+      upload-pages-artifact:
+        type: boolean
+        required: false
 
 jobs:
   build:
@@ -22,3 +23,13 @@ jobs:
     - run: npm run build
     - run: npm run test
     - run: npm ru cy:run
+
+    
+    - uses: actions/upload-artifact@v3
+      with:
+        name: e2e-videos
+        path: cypress/videos/
+    - if: ${{ inputs.upload-pages-artifact }}
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: build/
