@@ -6,7 +6,7 @@ on:
     
 jobs:
     test_changes:
-        uses: ./.github\workflows\test_changes.yml
+        uses: ./.github/workflows/test_changes.yml
         with:
             upload-pages-artifact: true
     deploy:
