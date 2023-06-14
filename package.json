@@ -4,6 +4,7 @@
   "description": "CS 362 Final Project",
   "scripts": {
     "cy:open": "cypress open",
+    "cy:run" : "cypress run",
     "test": "jest",
     "build": "webpack",
     "start": "webpack serve --open"

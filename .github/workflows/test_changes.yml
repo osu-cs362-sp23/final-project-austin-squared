@@ -1,0 +1,35 @@
+name: Test Changes
+
+on:
+  workflow_call:
+    inputs:
+      upload-pages-artifact:
+        type: boolean
+        required: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+
+
+    - run: npm ci
+    - run: npm run build
+    - run: npm run test
+    - run: npm ru cy:run
+
+    
+    - uses: actions/upload-artifact@v3
+      with:
+        name: e2e-videos
+        path: cypress/videos/
+    - if: ${{ inputs.upload-pages-artifact }}
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: build/
